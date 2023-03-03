@@ -1,0 +1,52 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+  background-image: linear-gradient(217deg, #1e1d1e, rgba(35, 8, 35, 0.532) 70.71%),
+  linear-gradient(127deg, rgb(14, 14, 15), rgba(31, 101, 213, 0.8) 70.71%),
+  linear-gradient(336deg, #9a158dc2, rgb(103, 32, 165) 70.71%);
+}
+
+.container{
+  position: relative;
+  width:100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.bubbles{
+  display: flex;
+  position: absolute;}
+
+.bubbles span{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(255, 167, 15);
+  margin: 1rem;
+  box-shadow: 0 0 0 12px rgb(255, 203, 15, 0.33),
+  0 0 50px rgb(255, 167, 15),
+  0 0 100px rgb(255, 167, 15);
+  animation: animate calc(150s / var(--i)) linear infinite;
+}
+
+.bubbles span:nth-of-type(even){
+  background-color: rgb(127, 51, 199);
+  box-shadow: 0 0 0 12px rgb(127, 51, 199, 0.33),
+  0 0 50px rgb(127, 51, 199),
+  0 0 100px rgb(121, 91, 204);
+}
+
+@keyframes animate{
+  0%{
+    transform: translateY(100vh) scale(0);
+  }
+  100%{
+    transform: translateY(-10vh) scale(1);
+  }
+}
+
